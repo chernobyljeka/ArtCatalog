@@ -1,0 +1,11 @@
+﻿
+namespace ArtCatalog
+{
+    class Database
+    {
+        
+        
+
+
+    }
+}
