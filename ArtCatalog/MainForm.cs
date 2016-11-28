@@ -16,5 +16,12 @@ namespace ArtCatalog
         {
             InitializeComponent();
         }
+
+        private CreateDataGrid dt;
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            dt = new CreateDataGrid(DataGridPanel);
+        }
     }
 }
