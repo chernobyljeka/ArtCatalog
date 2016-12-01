@@ -68,19 +68,27 @@ namespace ArtCatalog
             }
         }
 
-        // Дороботать
-        private string isDataTime(string DataTimeStr)
+        // Проверка на возможность преобразвать в DataTime
+        private bool isDataTime(string DataTimeStr)
         {
             var date = new DateTime();
             try
             {
                 date = Convert.ToDateTime(DataTimeStr);
-                return date.ToString("dd/MM/yyyy");
+                return true; 
             }
             catch
             {
-                return "";
+                return false;
             }
+        }
+
+        // Метод для пребразования строки в Европейский формат даты 
+        private string getDataTimeFormat(string DataTimeStr)
+        {
+            var date = new DateTime();
+            date = Convert.ToDateTime(DataTimeStr);
+            return date.ToString("dd/MM/yyyy");
         }
 
         //Метод реализующий SqlReader
@@ -102,13 +110,13 @@ namespace ArtCatalog
                     {
                         dt.Rows.Add();
                         for (int i = 0; i < dr.FieldCount; i++)
-                            if (isDataTime(dr[i].ToString()) == "")
+                            if (!isDataTime(dr[i].ToString()))
                             {
                                 dt.Rows[j].Cells[i].Value = dr[i].ToString();
                             }
                             else
                             {
-                                dt.Rows[j].Cells[i].Value = isDataTime(dr[i].ToString());
+                                dt.Rows[j].Cells[i].Value = getDataTimeFormat(dr[i].ToString());
                             }
                         j++;
                     }
