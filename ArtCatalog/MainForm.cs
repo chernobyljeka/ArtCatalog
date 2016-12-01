@@ -36,14 +36,17 @@ namespace ArtCatalog
             // !!!! Демонстрация полиморфизма
             db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dtS.GetDTObject, "0:MM/dd/yyyy    H:mm");
             
-
-
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            
+        }
 
+        private void AboutProgramMenu_Click(object sender, EventArgs e)
+        {
+            var about = new AboutProgramm();
+            about.ShowDialog();
         }
     }
 }

@@ -64,6 +64,7 @@
             this.AboutProgramMenu.Name = "AboutProgramMenu";
             this.AboutProgramMenu.Size = new System.Drawing.Size(94, 20);
             this.AboutProgramMenu.Text = "О программе";
+            this.AboutProgramMenu.Click += new System.EventHandler(this.AboutProgramMenu_Click);
             // 
             // tabPage2
             // 
@@ -182,7 +183,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "АртКаталог";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
