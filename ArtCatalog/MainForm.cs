@@ -23,5 +23,13 @@ namespace ArtCatalog
         {
             dt = new CreateDataGrid(DataGridPanel);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            string sql = "Select  [ID_product], [Name] ,[Discription] ,[Count] ,[Price] From Products";
+            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dt.GetDTObject);
+
+        }
     }
 }

@@ -33,8 +33,10 @@
             this.Grid = new System.Windows.Forms.TableLayoutPanel();
             this.ControlMenuPanel = new System.Windows.Forms.Panel();
             this.DataGridPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Grid.SuspendLayout();
+            this.ControlMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,6 +73,7 @@
             // 
             // ControlMenuPanel
             // 
+            this.ControlMenuPanel.Controls.Add(this.button1);
             this.ControlMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlMenuPanel.Location = new System.Drawing.Point(3, 3);
             this.ControlMenuPanel.Name = "ControlMenuPanel";
@@ -84,6 +87,16 @@
             this.DataGridPanel.Name = "DataGridPanel";
             this.DataGridPanel.Size = new System.Drawing.Size(537, 181);
             this.DataGridPanel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -99,6 +112,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.Grid.ResumeLayout(false);
+            this.ControlMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +125,7 @@
         private System.Windows.Forms.TableLayoutPanel Grid;
         private System.Windows.Forms.Panel ControlMenuPanel;
         private System.Windows.Forms.Panel DataGridPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

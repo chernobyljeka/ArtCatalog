@@ -5,16 +5,23 @@ namespace ArtCatalog
     class CreateDataGrid 
     {
 
-        private DataGridView dt;
+        private DataGridView dt; // Свойство типа DataGridView
 
-        public CreateDataGrid(Panel DataGridPanel)
+        public DataGridView GetDTObject
+         {
+            get { return this.dt; }
+         }
+
+        // Конструктор класса 
+        public CreateDataGrid(Panel DataGridPanel) 
         {
             dt = new DataGridView();
             this.SetProperty();
             this.AddColums();
-            DataGridPanel.Controls.Add(dt);
+            DataGridPanel.Controls.Add(dt); // Размещение дата грида на форме
         }
 
+        //Задание свойств дата грида
         private void SetProperty()
         {
             dt.Dock = DockStyle.Fill;
@@ -27,6 +34,7 @@ namespace ArtCatalog
             dt.RowHeadersVisible = false;
         }
 
+        // Добавление столбцов
         private void AddColums()
         {
             dt.Columns.Add("ID_product", "№");
