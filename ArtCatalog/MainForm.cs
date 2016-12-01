@@ -18,17 +18,31 @@ namespace ArtCatalog
         }
 
         private CreateDataGrid dt;
+        private DataGridSell dtS;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dt = new CreateDataGrid(DataGridPanel);
+            dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
+            // Создание экземляра класса
+            Database db = new Database(); 
+            string sql = "Select  [ID_product], [Name] ,[Discription] ,[Count] ,[Price] From Products";
+            // Вызов метода выполнение запроса с возвращением результата в дата грид
+            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dt.GetDTObject);
+
+            dtS = new DataGridSell(SellPanel);
+            sql = @"SELECT ID_sell, P.Name, Pr.Name, Date, Sum FROM " +
+                   "(Sells as S Inner Join Persons as P ON S.ID_person = P.ID_Person)" +
+                   "Inner Join Products as Pr ON S.ID_product= Pr.ID_product;";
+            // !!!! Демонстрация полиморфизма
+            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dtS.GetDTObject, "0:MM/dd/yyyy    H:mm");
+            
+
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            Database db = new Database();
-            string sql = "Select  [ID_product], [Name] ,[Discription] ,[Count] ,[Price] From Products";
-            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dt.GetDTObject);
 
         }
     }

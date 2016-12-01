@@ -6,13 +6,18 @@ namespace ArtCatalog
 {
     class Database
     {
+
+        #region "Конструкторы"
         public Database()
         {
 
         }
+        #endregion
 
+        #region "Поля"
         private SqlConnection con = new SqlConnection();
         private SqlCommand com = new SqlCommand();
+        #endregion
 
         //Метод реализующий SqlQuery
 
@@ -84,11 +89,11 @@ namespace ArtCatalog
         }
 
         // Метод для пребразования строки в Европейский формат даты 
-        private string getDataTimeFormat(string DataTimeStr)
+        private string getDataTimeFormat(string DataTimeStr, string DateFormat)
         {
             var date = new DateTime();
             date = Convert.ToDateTime(DataTimeStr);
-            return date.ToString("dd/MM/yyyy");
+            return date.ToString(DateFormat);
         }
 
         //Метод реализующий SqlReader
@@ -116,7 +121,7 @@ namespace ArtCatalog
                             }
                             else
                             {
-                                dt.Rows[j].Cells[i].Value = getDataTimeFormat(dr[i].ToString());
+                                dt.Rows[j].Cells[i].Value = getDataTimeFormat(dr[i].ToString(), "dd/MM/yyyy");
                             }
                         j++;
                     }
@@ -139,7 +144,53 @@ namespace ArtCatalog
             }
         }
 
+        // !!!! Реализация полиморфизма
+        public void SQLReader(string conStr, string sql, DataGridView dt, string DataFormat)
+        {
+            con.ConnectionString = conStr;
+            com.Connection = con;
+            com.CommandText = sql;
+            dt.Rows.Clear();
 
+            try
+            {
+                con.Open();
+                var dr = com.ExecuteReader();
+                int j = 0;
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        dt.Rows.Add();
+                        for (int i = 0; i < dr.FieldCount; i++)
+                            if (!isDataTime(dr[i].ToString()))
+                            {
+                                dt.Rows[j].Cells[i].Value = dr[i].ToString();
+                            }
+                            else
+                            {
+                                dt.Rows[j].Cells[i].Value = getDataTimeFormat(dr[i].ToString(), DataFormat);
+                            }
+                        j++;
+                    }
+                    dr.Close();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                     "В ходе запроса произошла ошибка\n\n" + ex.ToString(),
+                     "Ошибка",
+                     System.Windows.Forms.MessageBoxButtons.OK,
+                     System.Windows.Forms.MessageBoxIcon.Error
+                    );
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
     }
 }

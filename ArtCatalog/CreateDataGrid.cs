@@ -5,7 +5,7 @@ namespace ArtCatalog
     class CreateDataGrid 
     {
 
-        private DataGridView dt; // Свойство типа DataGridView
+        protected DataGridView dt; // Свойство типа DataGridView
 
         public DataGridView GetDTObject
          {
@@ -35,7 +35,7 @@ namespace ArtCatalog
         }
 
         // Добавление столбцов
-        private void AddColums()
+        protected virtual void AddColums()
         {
             dt.Columns.Add("ID_product", "№");
             dt.Columns["ID_product"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
