@@ -17,11 +17,20 @@ namespace ArtCatalog
         #region "Поля"
         private SqlConnection con = new SqlConnection();
         private SqlCommand com = new SqlCommand();
+        private string conStr;
+        #endregion
+
+        #region "Свойства"
+        public string ConStr
+        {
+            get { return conStr; }
+            set { conStr = value; }
+        }
         #endregion
 
         //Метод реализующий SqlQuery
 
-        public void SqlQuery(string conStr, string sql)
+        public void SqlQuery(string sql)
         {
             con.ConnectionString = conStr;
             com.Connection = con;
@@ -47,7 +56,7 @@ namespace ArtCatalog
         }
 
         //Метод релизующий SqlQueryScalar
-        public string SqlQueryScalar(string conStr, string sql)
+        public string SqlQueryScalar(string sql)
         {
             con.ConnectionString = conStr;
             com.Connection = con;
@@ -97,7 +106,7 @@ namespace ArtCatalog
         }
 
         //Метод реализующий SqlReader
-        public void SQLReader(string conStr, string sql, DataGridView dt)
+        public void SQLReader(string sql, DataGridView dt)
         {
             con.ConnectionString = conStr;
             com.Connection = con;
@@ -145,7 +154,7 @@ namespace ArtCatalog
         }
 
         // !!!! Реализация полиморфизма
-        public void SQLReader(string conStr, string sql, DataGridView dt, string DataFormat)
+        public void SQLReader(string sql, DataGridView dt, string DataFormat)
         {
             con.ConnectionString = conStr;
             com.Connection = con;

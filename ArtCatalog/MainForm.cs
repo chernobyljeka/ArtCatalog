@@ -24,29 +24,41 @@ namespace ArtCatalog
         {
             dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
             // Создание экземляра класса
-            Database db = new Database(); 
+            Database db = new Database();
+            db.ConStr = Properties.Settings.Default.ConnectionString;
             string sql = "Select  [ID_product], [Name] ,[Discription] ,[Count] ,[Price] From Products";
             // Вызов метода выполнение запроса с возвращением результата в дата грид
-            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dt.GetDTObject);
+            db.SQLReader(sql, dt.GetDTObject);
 
             dtS = new DataGridSell(SellPanel);
             sql = @"SELECT ID_sell, P.Name, Pr.Name, Date, Sum FROM " +
                    "(Sells as S Inner Join Persons as P ON S.ID_person = P.ID_Person)" +
                    "Inner Join Products as Pr ON S.ID_product= Pr.ID_product;";
             // !!!! Демонстрация полиморфизма
-            db.SQLReader(Properties.Settings.Default.ConnectionString, sql, dtS.GetDTObject, "0:MM/dd/yyyy    H:mm");
+            db.SQLReader(sql, dtS.GetDTObject, "0:MM/dd/yyyy    H:mm");
             
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            var addproduct = new AddProduct();
+            addproduct.ShowDialog();
         }
 
         private void AboutProgramMenu_Click(object sender, EventArgs e)
         {
             var about = new AboutProgramm();
             about.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

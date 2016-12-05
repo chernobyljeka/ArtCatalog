@@ -30,23 +30,27 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.AboutProgramMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.productTab = new System.Windows.Forms.TabPage();
-            this.Grid = new System.Windows.Forms.TableLayoutPanel();
-            this.DataGridPanel = new System.Windows.Forms.Panel();
-            this.ControlMenuPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ControlTabs = new System.Windows.Forms.TabControl();
+            this.SellTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SellPanel = new System.Windows.Forms.Panel();
+            this.productTab = new System.Windows.Forms.TabPage();
+            this.Grid = new System.Windows.Forms.TableLayoutPanel();
+            this.ControlMenuPanel = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DataGridPanel = new System.Windows.Forms.Panel();
+            this.ControlTabs = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.SellTab.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.productTab.SuspendLayout();
             this.Grid.SuspendLayout();
             this.ControlMenuPanel.SuspendLayout();
             this.ControlTabs.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,81 +70,16 @@
             this.AboutProgramMenu.Text = "О программе";
             this.AboutProgramMenu.Click += new System.EventHandler(this.AboutProgramMenu_Click);
             // 
-            // tabPage2
+            // SellTab
             // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(535, 211);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // productTab
-            // 
-            this.productTab.Controls.Add(this.Grid);
-            this.productTab.Location = new System.Drawing.Point(4, 22);
-            this.productTab.Name = "productTab";
-            this.productTab.Padding = new System.Windows.Forms.Padding(3);
-            this.productTab.Size = new System.Drawing.Size(535, 211);
-            this.productTab.TabIndex = 0;
-            this.productTab.Text = "Продукция";
-            this.productTab.UseVisualStyleBackColor = true;
-            // 
-            // Grid
-            // 
-            this.Grid.ColumnCount = 1;
-            this.Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.Grid.Controls.Add(this.ControlMenuPanel, 0, 0);
-            this.Grid.Controls.Add(this.DataGridPanel, 0, 1);
-            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid.Location = new System.Drawing.Point(3, 3);
-            this.Grid.Name = "Grid";
-            this.Grid.RowCount = 2;
-            this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Grid.Size = new System.Drawing.Size(529, 205);
-            this.Grid.TabIndex = 2;
-            // 
-            // DataGridPanel
-            // 
-            this.DataGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridPanel.Location = new System.Drawing.Point(3, 53);
-            this.DataGridPanel.Name = "DataGridPanel";
-            this.DataGridPanel.Size = new System.Drawing.Size(523, 149);
-            this.DataGridPanel.TabIndex = 1;
-            // 
-            // ControlMenuPanel
-            // 
-            this.ControlMenuPanel.Controls.Add(this.button1);
-            this.ControlMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ControlMenuPanel.Location = new System.Drawing.Point(3, 3);
-            this.ControlMenuPanel.Name = "ControlMenuPanel";
-            this.ControlMenuPanel.Size = new System.Drawing.Size(523, 44);
-            this.ControlMenuPanel.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // ControlTabs
-            // 
-            this.ControlTabs.Controls.Add(this.productTab);
-            this.ControlTabs.Controls.Add(this.tabPage2);
-            this.ControlTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ControlTabs.Location = new System.Drawing.Point(0, 24);
-            this.ControlTabs.Name = "ControlTabs";
-            this.ControlTabs.SelectedIndex = 0;
-            this.ControlTabs.Size = new System.Drawing.Size(543, 237);
-            this.ControlTabs.TabIndex = 1;
+            this.SellTab.Controls.Add(this.tableLayoutPanel1);
+            this.SellTab.Location = new System.Drawing.Point(4, 22);
+            this.SellTab.Name = "SellTab";
+            this.SellTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SellTab.Size = new System.Drawing.Size(535, 211);
+            this.SellTab.TabIndex = 1;
+            this.SellTab.Text = "Продажа";
+            this.SellTab.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -174,6 +113,113 @@
             this.SellPanel.Size = new System.Drawing.Size(523, 149);
             this.SellPanel.TabIndex = 1;
             // 
+            // productTab
+            // 
+            this.productTab.Controls.Add(this.Grid);
+            this.productTab.Location = new System.Drawing.Point(4, 22);
+            this.productTab.Name = "productTab";
+            this.productTab.Padding = new System.Windows.Forms.Padding(3);
+            this.productTab.Size = new System.Drawing.Size(535, 211);
+            this.productTab.TabIndex = 0;
+            this.productTab.Text = "Продукция";
+            this.productTab.UseVisualStyleBackColor = true;
+            // 
+            // Grid
+            // 
+            this.Grid.ColumnCount = 1;
+            this.Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Grid.Controls.Add(this.ControlMenuPanel, 0, 0);
+            this.Grid.Controls.Add(this.DataGridPanel, 0, 1);
+            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid.Location = new System.Drawing.Point(3, 3);
+            this.Grid.Name = "Grid";
+            this.Grid.RowCount = 2;
+            this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Grid.Size = new System.Drawing.Size(529, 205);
+            this.Grid.TabIndex = 2;
+            // 
+            // ControlMenuPanel
+            // 
+            this.ControlMenuPanel.Controls.Add(this.button5);
+            this.ControlMenuPanel.Controls.Add(this.button4);
+            this.ControlMenuPanel.Controls.Add(this.button3);
+            this.ControlMenuPanel.Controls.Add(this.button2);
+            this.ControlMenuPanel.Controls.Add(this.button1);
+            this.ControlMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlMenuPanel.Location = new System.Drawing.Point(3, 3);
+            this.ControlMenuPanel.Name = "ControlMenuPanel";
+            this.ControlMenuPanel.Size = new System.Drawing.Size(523, 44);
+            this.ControlMenuPanel.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(329, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(74, 37);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Подробнее";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(249, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(74, 37);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Продать";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(169, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 37);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(90, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(74, 37);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Удалить";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // DataGridPanel
+            // 
+            this.DataGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridPanel.Location = new System.Drawing.Point(3, 53);
+            this.DataGridPanel.Name = "DataGridPanel";
+            this.DataGridPanel.Size = new System.Drawing.Size(523, 149);
+            this.DataGridPanel.TabIndex = 1;
+            // 
+            // ControlTabs
+            // 
+            this.ControlTabs.Controls.Add(this.productTab);
+            this.ControlTabs.Controls.Add(this.SellTab);
+            this.ControlTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlTabs.Location = new System.Drawing.Point(0, 24);
+            this.ControlTabs.Name = "ControlTabs";
+            this.ControlTabs.SelectedIndex = 0;
+            this.ControlTabs.Size = new System.Drawing.Size(543, 237);
+            this.ControlTabs.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,12 +235,12 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.SellTab.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.productTab.ResumeLayout(false);
             this.Grid.ResumeLayout(false);
             this.ControlMenuPanel.ResumeLayout(false);
             this.ControlTabs.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +250,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem AboutProgramMenu;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage SellTab;
         private System.Windows.Forms.TabPage productTab;
         private System.Windows.Forms.TableLayoutPanel Grid;
         private System.Windows.Forms.Panel ControlMenuPanel;
@@ -214,6 +260,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel SellPanel;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 
