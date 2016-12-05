@@ -2,7 +2,7 @@
 
 namespace ArtCatalog
 {
-    class CreateDataGrid 
+    public class CreateDataGrid 
     {
 
         protected DataGridView dt; // Свойство типа DataGridView
@@ -44,6 +44,8 @@ namespace ArtCatalog
             dt.Columns.Add("Count", "Колличество");
             dt.Columns.Add("Price", "Цена");
         }
+
+  
 
         public void ClearData()
         {

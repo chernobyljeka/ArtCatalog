@@ -2,7 +2,7 @@
 
 namespace ArtCatalog
 {
-    class DataGridSell : CreateDataGrid
+    public class DataGridSell : CreateDataGrid
     {
         public DataGridSell(Panel DataGridPanel) : base (DataGridPanel)
         {

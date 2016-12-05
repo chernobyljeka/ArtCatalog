@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pName = new System.Windows.Forms.TextBox();
+            this.pDiscript = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.pCount = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.pPrice = new System.Windows.Forms.NumericUpDown();
             this.filePath = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.picture = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,19 +56,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Наименование";
             // 
-            // textBox1
+            // pName
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 1;
+            this.pName.Location = new System.Drawing.Point(115, 21);
+            this.pName.Name = "pName";
+            this.pName.Size = new System.Drawing.Size(188, 20);
+            this.pName.TabIndex = 1;
             // 
-            // textBox2
+            // pDiscript
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 3;
+            this.pDiscript.Location = new System.Drawing.Point(115, 47);
+            this.pDiscript.Name = "pDiscript";
+            this.pDiscript.Size = new System.Drawing.Size(188, 20);
+            this.pDiscript.TabIndex = 3;
             // 
             // label2
             // 
@@ -88,18 +88,18 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Количество";
             // 
-            // numericUpDown1
+            // pCount
             // 
-            this.numericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numericUpDown1.Location = new System.Drawing.Point(115, 76);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.pCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pCount.Location = new System.Drawing.Point(115, 76);
+            this.pCount.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(188, 20);
-            this.numericUpDown1.TabIndex = 5;
+            this.pCount.Name = "pCount";
+            this.pCount.Size = new System.Drawing.Size(188, 20);
+            this.pCount.TabIndex = 5;
             // 
             // label4
             // 
@@ -110,24 +110,25 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Цена";
             // 
-            // numericUpDown2
+            // pPrice
             // 
-            this.numericUpDown2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numericUpDown2.Location = new System.Drawing.Point(115, 103);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.pPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pPrice.Location = new System.Drawing.Point(115, 103);
+            this.pPrice.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(188, 20);
-            this.numericUpDown2.TabIndex = 7;
+            this.pPrice.Name = "pPrice";
+            this.pPrice.Size = new System.Drawing.Size(188, 20);
+            this.pPrice.TabIndex = 7;
             // 
             // filePath
             // 
             this.filePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filePath.Location = new System.Drawing.Point(29, 150);
             this.filePath.Name = "filePath";
+            this.filePath.ReadOnly = true;
             this.filePath.Size = new System.Drawing.Size(223, 22);
             this.filePath.TabIndex = 8;
             // 
@@ -159,6 +160,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFile
             // 
@@ -185,13 +187,13 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.filePath);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.pPrice);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.pCount);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pDiscript);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -199,8 +201,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добаление продукта";
             this.Load += new System.EventHandler(this.AddProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,13 +212,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox pName;
+        private System.Windows.Forms.TextBox pDiscript;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown pCount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown pPrice;
         private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;

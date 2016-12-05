@@ -2,7 +2,7 @@
 
 namespace ArtCatalog
 {
-    abstract class Persons
+    abstract class Person
     {
         protected int id;
         protected string name;
@@ -34,12 +34,12 @@ namespace ArtCatalog
             set { date = value; }
         }
 
-        public Persons()
+        public Person()
         {
 
         }
 
-        public Persons(int id,
+        public Person(int id,
                        string name,
                        string surname,
                        DateTime date)

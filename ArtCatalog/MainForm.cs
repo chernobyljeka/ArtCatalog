@@ -19,10 +19,16 @@ namespace ArtCatalog
 
         private CreateDataGrid dt;
         private DataGridSell dtS;
+        public CreateDataGrid DT
+        {
+           get { return dt; }
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
+            dt.GetDTObject.Name = "DataGridProduct";
             // Создание экземляра класса
             Database db = new Database();
             db.ConStr = Properties.Settings.Default.ConnectionString;
@@ -41,7 +47,7 @@ namespace ArtCatalog
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var addproduct = new AddProduct();
+            var addproduct = new AddProduct(){ Owner = this };
             addproduct.ShowDialog();
         }
 
@@ -53,7 +59,8 @@ namespace ArtCatalog
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            var EditForm = new EditProduct();
+            EditForm.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)

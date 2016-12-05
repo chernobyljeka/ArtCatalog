@@ -26,6 +26,12 @@ namespace ArtCatalog
             get { return conStr; }
             set { conStr = value; }
         }
+
+        public SqlCommand Com
+        {
+            get { return com; }
+        }
+
         #endregion
 
         //Метод реализующий SqlQuery
