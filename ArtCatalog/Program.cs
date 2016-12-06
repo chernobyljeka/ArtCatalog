@@ -10,6 +10,12 @@ namespace ArtCatalog
     {
 
         private static employee emp;
+        private static bool input = true;
+        public static bool Input
+        {
+            get { return input; }
+            set { input = value;  }
+        }
 
         /// <summary>
         /// Главная точка входа для приложения.
@@ -25,6 +31,8 @@ namespace ArtCatalog
             var login = new Login();
             login.ShowDialog();
             login.Dispose();
+
+            if (input)
             Application.Run(new MainForm());
         }
     }
