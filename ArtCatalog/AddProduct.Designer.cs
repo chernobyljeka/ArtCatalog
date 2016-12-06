@@ -212,18 +212,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox pName;
-        private System.Windows.Forms.TextBox pDiscript;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown pCount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown pPrice;
-        private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFile;
-        private System.Windows.Forms.PictureBox picture;
+        protected System.Windows.Forms.TextBox pName;
+        protected System.Windows.Forms.TextBox pDiscript;
+        protected System.Windows.Forms.NumericUpDown pCount;
+        protected System.Windows.Forms.NumericUpDown pPrice;
+        protected System.Windows.Forms.TextBox filePath;
+        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.PictureBox picture;
     }
 }

@@ -32,6 +32,7 @@ namespace ArtCatalog
             dt.AllowUserToResizeColumns = true;
             dt.AllowUserToAddRows = false;
             dt.RowHeadersVisible = false;
+            dt.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         // Добавление столбцов
@@ -45,7 +46,29 @@ namespace ArtCatalog
             dt.Columns.Add("Price", "Цена");
         }
 
-  
+        public string getData(int columIndex)
+        {   try
+            {
+                var currentIndex = dt.CurrentCell.RowIndex;
+                return this.dt.Rows[currentIndex].Cells[columIndex].Value.ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public void RemoveCurrentRow()
+        {
+            try
+            {
+                dt.Rows.Remove(dt.CurrentRow);               
+            }
+            catch
+            {
+               
+            }
+        }
 
         public void ClearData()
         {

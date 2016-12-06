@@ -49,6 +49,7 @@ namespace ArtCatalog
         {
             var addproduct = new AddProduct(){ Owner = this };
             addproduct.ShowDialog();
+            addproduct.Dispose();
         }
 
         private void AboutProgramMenu_Click(object sender, EventArgs e)
@@ -59,13 +60,44 @@ namespace ArtCatalog
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var EditForm = new EditProduct();
+            var EditForm = new EditProduct() { Owner = this }; ;
             EditForm.ShowDialog();
+            EditForm.Dispose();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (dt.getData(1) != "")
+            {
+                var dr = MessageBox.Show(String.Format(@"Действительно хотите удалить продукцию «{0}»", dt.getData(1)),
+                                         "Удаление продукциия",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    string sql = String.Format("DELETE FROM Sells Where ID_product = {0};" +
+                                               "DELETE FROM Products Where ID_product = {0};", dt.getData(0));
+                    var db = new Database();
+                    db.ConStr = Properties.Settings.Default.ConnectionString;
+                    db.SqlQuery(sql);
+                    db = null;
+                    dt.RemoveCurrentRow();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана продукция из списка",
+                                         "Удаление продукциия",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+            
         }
     }
 }

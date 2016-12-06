@@ -207,5 +207,35 @@ namespace ArtCatalog
             }
         }
 
+        public Product getProductByID(int id)
+        {
+            con.ConnectionString = conStr;
+            com.Connection = con;
+            com.CommandText = String.Format("Select * From Products Where ID_product = {0};", id);
+            Product pr = new Product();
+            byte[] imgBuffer;
+            var imgConvert = new ImageConvert();
+            
+                con.Open();
+                var dr = com.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        pr.Id = Convert.ToInt32(dr[0]);
+                        pr.Name = dr[1].ToString();
+                        pr.Discription = dr[2].ToString();
+                        pr.Cont = Convert.ToInt32(dr[3]);
+                        pr.Price = Convert.ToInt32(dr[4]);
+                        imgBuffer = imgConvert.ObjectToByteArray(dr[5]); //Ошибка
+                        pr.Img = imgConvert.byteArrayToImage(imgBuffer);
+
+                    }
+                    dr.Close();
+                }
+                con.Close();
+                return pr;
+           
+         }
     }
 }

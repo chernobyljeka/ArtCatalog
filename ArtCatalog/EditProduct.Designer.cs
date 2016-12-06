@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(579, 225);
             this.Name = "EditProduct";
             this.Text = "Изменить продукт";
+            this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
