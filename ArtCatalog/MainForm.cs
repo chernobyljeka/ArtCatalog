@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArtCatalog
@@ -24,11 +17,8 @@ namespace ArtCatalog
            get { return dt; }
         }
 
-
-        private void MainForm_Load(object sender, EventArgs e)
+        private void FillDT()
         {
-            dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
-            dt.GetDTObject.Name = "DataGridProduct";
             // Создание экземляра класса
             Database db = new Database();
             db.ConStr = Properties.Settings.Default.ConnectionString;
@@ -42,6 +32,13 @@ namespace ArtCatalog
                    "Inner Join Products as Pr ON S.ID_product= Pr.ID_product;";
             // !!!! Демонстрация полиморфизма
             db.SQLReader(sql, dtS.GetDTObject, "0:MM/dd/yyyy    H:mm");
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
+            dt.GetDTObject.Name = "DataGridProduct";
+            FillDT();
             
         }
 
@@ -98,6 +95,18 @@ namespace ArtCatalog
                                          MessageBoxIcon.Information);
             }
             
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void обновитьТаблицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dt.ClearData();
+            dtS.ClearData();
+            FillDT();
         }
     }
 }

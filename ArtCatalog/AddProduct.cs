@@ -12,8 +12,8 @@ namespace ArtCatalog
             InitializeComponent();
         }
 
-        private Image img;  // картинка
-        private byte[] imgBytes; // картинка в виде массива байтов
+        protected Image img;  // картинка
+        protected byte[] imgBytes; // картинка в виде массива байтов
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace ArtCatalog
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        protected virtual void button2_Click(object sender, EventArgs e)
         {
             try
             {

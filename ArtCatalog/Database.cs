@@ -206,14 +206,14 @@ namespace ArtCatalog
                 con.Close();
             }
         }
-
+        
+        // Получение продукта по ID
         public Product getProductByID(int id)
         {
             con.ConnectionString = conStr;
             com.Connection = con;
             com.CommandText = String.Format("Select * From Products Where ID_product = {0};", id);
             Product pr = new Product();
-            byte[] imgBuffer;
             var imgConvert = new ImageConvert();
             
                 con.Open();
@@ -227,8 +227,16 @@ namespace ArtCatalog
                         pr.Discription = dr[2].ToString();
                         pr.Cont = Convert.ToInt32(dr[3]);
                         pr.Price = Convert.ToInt32(dr[4]);
-                        imgBuffer = imgConvert.ObjectToByteArray(dr[5]); //Ошибка
-                        pr.Img = imgConvert.byteArrayToImage(imgBuffer);
+
+                    if (dr[5] as byte[] != null && (dr[5] as byte[]).Length > 0)
+                    {
+                        pr.Img = imgConvert.byteArrayToImage(dr[5] as byte[]);
+                    }
+                    else
+                    {
+                        pr.Img = Properties.Resources.no_image;
+                    }
+
 
                     }
                     dr.Close();
@@ -237,5 +245,7 @@ namespace ArtCatalog
                 return pr;
            
          }
+
+
     }
 }

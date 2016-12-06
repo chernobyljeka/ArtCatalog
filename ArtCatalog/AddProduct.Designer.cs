@@ -216,7 +216,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.OpenFileDialog openFile;
         protected System.Windows.Forms.TextBox pName;
         protected System.Windows.Forms.TextBox pDiscript;
         protected System.Windows.Forms.NumericUpDown pCount;
@@ -225,5 +224,6 @@
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Button button2;
         protected System.Windows.Forms.PictureBox picture;
+        protected System.Windows.Forms.OpenFileDialog openFile;
     }
 }

@@ -28,7 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ((System.ComponentModel.ISupportInitialize)(this.pCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+           
+            // 
+            // button2
+            // 
+            
+            // 
+            // picture
+            // 
+            this.picture.Image = global::ArtCatalog.Properties.Resources.product_default;
             // 
             // EditProduct
             // 
@@ -38,6 +53,9 @@
             this.Name = "EditProduct";
             this.Text = "Изменить продукт";
             this.Load += new System.EventHandler(this.EditProduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

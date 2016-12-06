@@ -44,6 +44,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.DataGridPanel = new System.Windows.Forms.Panel();
             this.ControlTabs = new System.Windows.Forms.TabControl();
+            this.обновитьТаблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SellTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -56,7 +58,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutProgramMenu});
+            this.обновитьТаблицыToolStripMenuItem,
+            this.AboutProgramMenu,
+            this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(543, 24);
@@ -221,6 +225,20 @@
             this.ControlTabs.Size = new System.Drawing.Size(543, 237);
             this.ControlTabs.TabIndex = 1;
             // 
+            // обновитьТаблицыToolStripMenuItem
+            // 
+            this.обновитьТаблицыToolStripMenuItem.Name = "обновитьТаблицыToolStripMenuItem";
+            this.обновитьТаблицыToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.обновитьТаблицыToolStripMenuItem.Text = "Обновить таблицы";
+            this.обновитьТаблицыToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицыToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +283,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem обновитьТаблицыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }
 
