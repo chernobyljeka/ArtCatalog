@@ -28,11 +28,11 @@ namespace ArtCatalog
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var login = new Login();
-            login.ShowDialog();
-            login.Dispose();
+            //var login = new Login();
+            //login.ShowDialog();
+            //login.Dispose();
 
-            if (input)
+            //if (input)
             Application.Run(new MainForm());
         }
     }
