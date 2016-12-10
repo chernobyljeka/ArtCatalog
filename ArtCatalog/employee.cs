@@ -5,7 +5,6 @@
         private string login;
         private string pas_hash;
         private string position;
-        private bool user_manifest;
 
         public string Login
         {
@@ -25,11 +24,6 @@
             set { position = value; }
         }
 
-        public bool User_manifest
-        {
-            get { return user_manifest; }
-            set { user_manifest = value; }
-        }
 
         public employee()
         {

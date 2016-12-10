@@ -10,11 +10,18 @@ namespace ArtCatalog
     {
 
         private static employee emp;
-        private static bool input = true;
+        private static bool input = false;
+
         public static bool Input
         {
             get { return input; }
             set { input = value;  }
+        }
+
+        public static employee Emp
+        {
+            get { return emp; }
+            set { emp = value; }
         }
 
         /// <summary>
@@ -23,7 +30,6 @@ namespace ArtCatalog
         [STAThread]
         static void Main()
         {
-            emp = new employee();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

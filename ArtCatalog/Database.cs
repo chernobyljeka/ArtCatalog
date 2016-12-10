@@ -246,6 +246,38 @@ namespace ArtCatalog
            
          }
 
+        public bool Login(string login, string pas)
+        {
+            con.ConnectionString = conStr;
+            com.Connection = con;
+            com.CommandText = String.Format("Select * From Persons Where login like '{0}';", login.Trim());
+            var md = new md5();
+            Program.Emp = new employee();
+            con.Open();
+            var dr = com.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    if (md.HashMD5(pas) == dr[2].ToString())
+                    {
+                        Program.Emp.Id = Convert.ToInt32(dr[0]);
+                        Program.Emp.Login = dr[1].ToString();
+                        Program.Emp.Pas_hash = dr[2].ToString();
+                        Program.Emp.Name = dr[3].ToString();
+                        Program.Emp.Surname = dr[4].ToString();
+                        Program.Emp.Date = Convert.ToDateTime(dr[5].ToString());
+                        Program.Emp.Position = dr[6].ToString();
+                        dr.Close();
+                        con.Close();
+                        return true;
+                    }
+                }
+                dr.Close();
+            }
+            con.Close();
+            return false;
+        }
 
     }
 }
