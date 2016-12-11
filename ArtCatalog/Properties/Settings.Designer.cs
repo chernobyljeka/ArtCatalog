@@ -26,7 +26,7 @@ namespace ArtCatalog.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3R4ILLP\\SQLEXPRESS;Initial Catalog=artcatalog;Integrated Secu" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8EHLPKH\\SQLEXPRESS;Initial Catalog=artcatalog;Integrated Secu" +
             "rity=True;Connect Timeout=180")]
         public string ConnectionString {
             get {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ArtCatalog
@@ -26,8 +27,7 @@ namespace ArtCatalog
             // Вызов метода выполнение запроса с возвращением результата в дата грид
             db.SQLReader(sql, dt.GetDTObject);
 
-            dtS = new DataGridSell(SellPanel);
-            sql = @"SELECT ID_sell, P.Name, Pr.Name, Date, Sum FROM " +
+            sql = @"SELECT ID_sell, P.Name, Pr.Name, Date, Kol, Sum FROM " +
                    "(Sells as S Inner Join Persons as P ON S.ID_person = P.ID_Person)" +
                    "Inner Join Products as Pr ON S.ID_product= Pr.ID_product;";
             // !!!! Демонстрация полиморфизма
@@ -38,6 +38,7 @@ namespace ArtCatalog
         {
             dt = new CreateDataGrid(DataGridPanel); //создание экземляра класса, реализуюшего создание 
             dt.GetDTObject.Name = "DataGridProduct";
+            dtS = new DataGridSell(SellPanel);
             FillDT();
             
         }
@@ -53,6 +54,7 @@ namespace ArtCatalog
         {
             var about = new AboutProgramm();
             about.ShowDialog();
+            about.Dispose();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -107,6 +109,60 @@ namespace ArtCatalog
             dt.ClearData();
             dtS.ClearData();
             FillDT();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var db = new Database();
+                db.ConStr = Properties.Settings.Default.ConnectionString;
+                string input;
+                int kol = 1;
+                try
+                {
+                    input = Microsoft.VisualBasic.Interaction.InputBox("Введите количество: ", "Ввод количества");
+                    kol = Convert.ToInt32(input);
+                    input = null;
+                    int cost = Convert.ToInt32(dt.getData(4));
+                    int sum = kol * cost;
+                    var sql = String.Format(@"INSERT INTO Sells Values ({0}, {1}, @date, {2}, {3});",
+                                        dt.getData(0),
+                                        Program.Emp.Id,
+                                        kol,
+                                        sum);
+                    db.Com.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
+                    db.SqlQuery(sql);
+
+                    #region "Добавление в дата грид"
+                        sql = @"Select MAX(ID_sell) From Sells;";
+                        string id = db.SqlQueryScalar(sql);
+                    dtS.GetDTObject.Rows.Add(id,
+                                      dt.getData(1),
+                                      Program.Emp.Name,
+                                      DateTime.Now.ToString("0:MM/dd/yyyy    H:mm"),
+                                      kol.ToString(),
+                                      sum.ToString());
+                    #endregion
+
+                }
+                catch
+                {
+                    MessageBox.Show("Не верно введено количесто",
+                         "Продажа продукциия",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
+                }
+               
+
+            }
+            catch
+            {
+                MessageBox.Show("Не выбрана продукция из списка",
+                         "Продажа продукциия",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.обновитьТаблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgramMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SellTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,8 +48,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.DataGridPanel = new System.Windows.Forms.Panel();
             this.ControlTabs = new System.Windows.Forms.TabControl();
-            this.обновитьТаблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SellTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,9 +67,16 @@
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(543, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(576, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // обновитьТаблицыToolStripMenuItem
+            // 
+            this.обновитьТаблицыToolStripMenuItem.Name = "обновитьТаблицыToolStripMenuItem";
+            this.обновитьТаблицыToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.обновитьТаблицыToolStripMenuItem.Text = "Обновить таблицы";
+            this.обновитьТаблицыToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицыToolStripMenuItem_Click);
             // 
             // AboutProgramMenu
             // 
@@ -74,13 +85,20 @@
             this.AboutProgramMenu.Text = "О программе";
             this.AboutProgramMenu.Click += new System.EventHandler(this.AboutProgramMenu_Click);
             // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
             // SellTab
             // 
             this.SellTab.Controls.Add(this.tableLayoutPanel1);
             this.SellTab.Location = new System.Drawing.Point(4, 22);
             this.SellTab.Name = "SellTab";
             this.SellTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SellTab.Size = new System.Drawing.Size(535, 211);
+            this.SellTab.Size = new System.Drawing.Size(568, 211);
             this.SellTab.TabIndex = 1;
             this.SellTab.Text = "Продажа";
             this.SellTab.UseVisualStyleBackColor = true;
@@ -98,7 +116,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(529, 205);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 205);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // panel1
@@ -106,7 +124,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 44);
+            this.panel1.Size = new System.Drawing.Size(556, 44);
             this.panel1.TabIndex = 0;
             // 
             // SellPanel
@@ -114,7 +132,7 @@
             this.SellPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SellPanel.Location = new System.Drawing.Point(3, 53);
             this.SellPanel.Name = "SellPanel";
-            this.SellPanel.Size = new System.Drawing.Size(523, 149);
+            this.SellPanel.Size = new System.Drawing.Size(556, 149);
             this.SellPanel.TabIndex = 1;
             // 
             // productTab
@@ -123,7 +141,7 @@
             this.productTab.Location = new System.Drawing.Point(4, 22);
             this.productTab.Name = "productTab";
             this.productTab.Padding = new System.Windows.Forms.Padding(3);
-            this.productTab.Size = new System.Drawing.Size(535, 211);
+            this.productTab.Size = new System.Drawing.Size(568, 211);
             this.productTab.TabIndex = 0;
             this.productTab.Text = "Продукция";
             this.productTab.UseVisualStyleBackColor = true;
@@ -141,7 +159,7 @@
             this.Grid.RowCount = 2;
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Grid.Size = new System.Drawing.Size(529, 205);
+            this.Grid.Size = new System.Drawing.Size(562, 205);
             this.Grid.TabIndex = 2;
             // 
             // ControlMenuPanel
@@ -154,55 +172,80 @@
             this.ControlMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlMenuPanel.Location = new System.Drawing.Point(3, 3);
             this.ControlMenuPanel.Name = "ControlMenuPanel";
-            this.ControlMenuPanel.Size = new System.Drawing.Size(523, 44);
+            this.ControlMenuPanel.Size = new System.Drawing.Size(556, 44);
             this.ControlMenuPanel.TabIndex = 0;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(329, 4);
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(415, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(74, 37);
+            this.button5.Size = new System.Drawing.Size(97, 37);
             this.button5.TabIndex = 4;
             this.button5.Text = "Подробнее";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(249, 4);
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(312, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(74, 37);
+            this.button4.Size = new System.Drawing.Size(97, 37);
             this.button4.TabIndex = 3;
             this.button4.Text = "Продать";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(169, 4);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.ImageIndex = 1;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(209, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 37);
+            this.button3.Size = new System.Drawing.Size(97, 37);
             this.button3.TabIndex = 2;
+            this.button3.Tag = "Изменить";
             this.button3.Text = "Изменить";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTip1.SetToolTip(this.button3, "Изменить");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(90, 4);
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.ImageIndex = 0;
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(106, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 37);
+            this.button2.Size = new System.Drawing.Size(97, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Удалить";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTip1.SetToolTip(this.button2, "Удалить");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 4);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageIndex = 2;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 37);
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(97, 37);
             this.button1.TabIndex = 0;
+            this.button1.Tag = "";
             this.button1.Text = "Добавить";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTip1.SetToolTip(this.button1, "Добавить");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -211,7 +254,7 @@
             this.DataGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridPanel.Location = new System.Drawing.Point(3, 53);
             this.DataGridPanel.Name = "DataGridPanel";
-            this.DataGridPanel.Size = new System.Drawing.Size(523, 149);
+            this.DataGridPanel.Size = new System.Drawing.Size(556, 149);
             this.DataGridPanel.TabIndex = 1;
             // 
             // ControlTabs
@@ -222,28 +265,23 @@
             this.ControlTabs.Location = new System.Drawing.Point(0, 24);
             this.ControlTabs.Name = "ControlTabs";
             this.ControlTabs.SelectedIndex = 0;
-            this.ControlTabs.Size = new System.Drawing.Size(543, 237);
+            this.ControlTabs.Size = new System.Drawing.Size(576, 237);
             this.ControlTabs.TabIndex = 1;
             // 
-            // обновитьТаблицыToolStripMenuItem
+            // imageList1
             // 
-            this.обновитьТаблицыToolStripMenuItem.Name = "обновитьТаблицыToolStripMenuItem";
-            this.обновитьТаблицыToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.обновитьТаблицыToolStripMenuItem.Text = "Обновить таблицы";
-            this.обновитьТаблицыToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицыToolStripMenuItem_Click);
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "doc_delete_icon&32.png");
+            this.imageList1.Images.SetKeyName(1, "doc_edit_icon&32.png");
+            this.imageList1.Images.SetKeyName(2, "doc_plus_icon&32.png");
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 261);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(576, 261);
             this.Controls.Add(this.ControlTabs);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -281,10 +319,12 @@
         private System.Windows.Forms.Panel SellPanel;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem обновитьТаблицыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

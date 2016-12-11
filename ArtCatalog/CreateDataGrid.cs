@@ -70,7 +70,7 @@ namespace ArtCatalog
             }
         }
 
-        public void ClearData()
+        public virtual void ClearData()
         {
             dt.Rows.Clear();
         }

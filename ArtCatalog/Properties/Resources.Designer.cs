@@ -73,6 +73,16 @@ namespace ArtCatalog.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calc_icon_32 {
+            get {
+                object obj = ResourceManager.GetObject("calc_icon&32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap no_image {
             get {
                 object obj = ResourceManager.GetObject("no_image", resourceCulture);
