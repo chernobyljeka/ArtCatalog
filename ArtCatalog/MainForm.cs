@@ -66,7 +66,9 @@ namespace ArtCatalog
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            var TvForm = new Tovar() { Owner = this }; ;
+            TvForm.ShowDialog();
+            TvForm.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -163,6 +165,13 @@ namespace ArtCatalog
                          MessageBoxButtons.OK,
                          MessageBoxIcon.Information);
             }
+        }
+
+        private void добавитьПользователяToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var u = new AddUser();
+            u.ShowDialog();
+            u.Dispose();
         }
     }
 }

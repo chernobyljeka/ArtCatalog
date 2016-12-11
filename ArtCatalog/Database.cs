@@ -70,7 +70,15 @@ namespace ArtCatalog
             try
             {
                 con.Open();
-                return com.ExecuteScalar().ToString();
+                if (com.ExecuteScalar() == null)
+                {
+                    return "";
+                }
+                else
+                {
+                    return com.ExecuteScalar().ToString();
+                }
+                
             }
             catch (Exception ex)
             {

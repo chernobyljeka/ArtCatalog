@@ -42,14 +42,15 @@
             this.Grid = new System.Windows.Forms.TableLayoutPanel();
             this.ControlMenuPanel = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button4 = new System.Windows.Forms.Button();
+            this.DataGridPanel = new System.Windows.Forms.Panel();
+            this.ControlTabs = new System.Windows.Forms.TabControl();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.DataGridPanel = new System.Windows.Forms.Panel();
-            this.ControlTabs = new System.Windows.Forms.TabControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.добавитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SellTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обновитьТаблицыToolStripMenuItem,
+            this.добавитьПользователяToolStripMenuItem,
             this.AboutProgramMenu,
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -188,6 +190,14 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "doc_delete_icon&32.png");
+            this.imageList1.Images.SetKeyName(1, "doc_edit_icon&32.png");
+            this.imageList1.Images.SetKeyName(2, "doc_plus_icon&32.png");
+            // 
             // button4
             // 
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,6 +210,25 @@
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // DataGridPanel
+            // 
+            this.DataGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridPanel.Location = new System.Drawing.Point(3, 53);
+            this.DataGridPanel.Name = "DataGridPanel";
+            this.DataGridPanel.Size = new System.Drawing.Size(556, 149);
+            this.DataGridPanel.TabIndex = 1;
+            // 
+            // ControlTabs
+            // 
+            this.ControlTabs.Controls.Add(this.productTab);
+            this.ControlTabs.Controls.Add(this.SellTab);
+            this.ControlTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlTabs.Location = new System.Drawing.Point(0, 24);
+            this.ControlTabs.Name = "ControlTabs";
+            this.ControlTabs.SelectedIndex = 0;
+            this.ControlTabs.Size = new System.Drawing.Size(576, 237);
+            this.ControlTabs.TabIndex = 1;
             // 
             // button3
             // 
@@ -249,32 +278,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // DataGridPanel
+            // добавитьПользователяToolStripMenuItem
             // 
-            this.DataGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridPanel.Location = new System.Drawing.Point(3, 53);
-            this.DataGridPanel.Name = "DataGridPanel";
-            this.DataGridPanel.Size = new System.Drawing.Size(556, 149);
-            this.DataGridPanel.TabIndex = 1;
-            // 
-            // ControlTabs
-            // 
-            this.ControlTabs.Controls.Add(this.productTab);
-            this.ControlTabs.Controls.Add(this.SellTab);
-            this.ControlTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ControlTabs.Location = new System.Drawing.Point(0, 24);
-            this.ControlTabs.Name = "ControlTabs";
-            this.ControlTabs.SelectedIndex = 0;
-            this.ControlTabs.Size = new System.Drawing.Size(576, 237);
-            this.ControlTabs.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "doc_delete_icon&32.png");
-            this.imageList1.Images.SetKeyName(1, "doc_edit_icon&32.png");
-            this.imageList1.Images.SetKeyName(2, "doc_plus_icon&32.png");
+            this.добавитьПользователяToolStripMenuItem.Name = "добавитьПользователяToolStripMenuItem";
+            this.добавитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+            this.добавитьПользователяToolStripMenuItem.Text = "Добавить пользователя";
+            this.добавитьПользователяToolStripMenuItem.Click += new System.EventHandler(this.добавитьПользователяToolStripMenuItem_Click_1);
             // 
             // MainForm
             // 
@@ -325,6 +334,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьПользователяToolStripMenuItem;
     }
 }
 
